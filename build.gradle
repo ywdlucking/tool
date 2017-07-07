@@ -1,0 +1,35 @@
+group 'com.ywd'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath(
+                'org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE'
+        )
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile files('lib/icepdf-core-4.3.3.jar')
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'com.itextpdf:itextpdf:5.5.11'
+    compile 'com.itextpdf.tool:xmlworker:5.5.11'
+    compile 'com.itextpdf:itext-asian:5.2.0'
+    compile 'org.apache.pdfbox:pdfbox:2.0.6'
+    compile 'org.apache.pdfbox:fontbox:2.0.6'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
