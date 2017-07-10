@@ -20,11 +20,16 @@ public class PdfToImg {
 
     /**
      * PDFBOX
+     * 在Linux环境会出现中午字符乱码
+     * 原因：系统缺少对应的字体库
+     *
+     * 解决：容器环境自己添加字体库到/usr/share/fonts
+     * 如:COPY simsun.ttf /usr/share/fonts/simsun.ttf
      * @throws Exception
      */
     public static void pdfToImageTheOne() throws Exception{
         File file = new File("/home/master/test.pdf");
-        OutputStream outImage = new FileOutputStream("C:/workspace/box.jpg");
+        OutputStream outImage = new FileOutputStream("/home/master/test-box.jpg");
         try {
             PDDocument doc = PDDocument.load(file);
             PDFRenderer renderer = new PDFRenderer(doc);
@@ -55,9 +60,9 @@ public class PdfToImg {
      * @throws Exception
      */
     public static void pdfToImageTheTwo() throws Exception {
-        String filePath = "c:/workspace/86310020170230003601.pdf";
+        String filePath = "/home/master/test.pdf";
         Document document = new Document();
-        OutputStream outImage = new FileOutputStream("C:/workspace/policy-ice.jpg");
+        OutputStream outImage = new FileOutputStream("/home/master/test-ice.jpg");
         document.setFile(filePath);
         float scale = 1.3f;
         float rotation = 0f;

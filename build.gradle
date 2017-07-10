@@ -25,6 +25,7 @@ repositories {
 dependencies {
     compile files('lib/icepdf-core-4.3.3.jar')
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-mail'
     compile 'com.itextpdf:itextpdf:5.5.11'
     compile 'com.itextpdf.tool:xmlworker:5.5.11'
     compile 'com.itextpdf:itext-asian:5.2.0'
